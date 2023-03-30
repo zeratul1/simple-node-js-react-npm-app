@@ -8,6 +8,9 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
+                sh 'pwd'
+                sh 'id'
+                sh 'echo $HOME'
                 sh 'npm version'
                 sh 'npm config get cache'
                 sh 'npm install' 
