@@ -2,16 +2,12 @@ pipeline {
     agent {
         docker {
             image 'node:lts-bullseye-slim' 
-            args '-p 33000:3000 -u 1000:1000 /bin/bash' 
+            args '-p 33000:3000 -u 1000:1000' 
         }
     }
     stages {
         stage('Build') { 
             steps {
-                sh 'pwd'
-                sh 'id'
-                sh 'echo $HOME'
-                sh 'npm version'
                 sh 'npm config get cache'
                 sh 'npm install' 
             }
