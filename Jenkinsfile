@@ -1,3 +1,5 @@
+#!groovy
+
 pipeline {
     environment {
         JENKINS_USER_NAME = "${sh(script:'id -un', returnStdout: true).trim()}"
