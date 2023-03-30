@@ -8,7 +8,8 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                sh 'npm config ls -l'
+                sh 'npm version'
+                sh 'npm config get cache'
                 sh 'npm install' 
             }
         }
