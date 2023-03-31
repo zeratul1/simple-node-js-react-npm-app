@@ -8,8 +8,8 @@ ENV GID=${GID}
 ENV UID=${UID}
 ENV UNAME=${UNAME}
 
-RUN mkdir /home/$UNAME
+RUN mkdir /home/$UNAME; exit 0
 
-RUN groupadd -g $GID $UNAME
-RUN useradd -r -u $UID -g $UNAME -d /home/$UNAME $UNAME
-RUN chown $UNAME:$UNAME /home/$UNAME
+RUN groupadd -g $GID $UNAME; exit 0
+RUN useradd -r -u $UID -g $UNAME -d /home/$UNAME $UNAME; exit 0
+RUN chown $UNAME:$UNAME /home/$UNAME; exit 0
