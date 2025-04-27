@@ -12,6 +12,10 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
+                script {
+                    BUILD_TAG = "DEV-${env.BRANCH_NAME}-${env.GIT_BRANCH}"
+                    echo "$BUILD_TAG"
+                }
                 sh 'npm config get cache'
                 sh 'npm install' 
             }
